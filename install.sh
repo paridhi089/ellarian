@@ -10,9 +10,9 @@ echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable ma
 apt update
 }
 #installing basic apps
-base()
+basic()
 {
-apt install -y git vlc node-typescript gimp steam brave-browser firefox deluge piper
+apt install -y git vlc node-typescript gimp steam brave-browser firefox deluge piper timeshift
 #apt install -y chrome-gnome-shell
 #apt install -y lightdm
 #apt install -y gnome-tweaks
@@ -62,55 +62,28 @@ apt -y update
 apt install -y libgl1-mesa-dri:i386
 apt install -y mesa-vulkan-drivers mesa-vulkan-drivers:i386
 }
-#pcloud
+#installing pcloud
 pcloud()
 {
-wget -P /home/$USER/Downloads/ "https://p-def1.pcloud.com/cBZLReAUjZLbsoWfZZZQ5FEa7Z2ZZ9WpZkZpOo5VZzFZtkZO0ZYXZ45Z37ZpVZY0Z3FZr5ZGFZh5ZVXZyVZtouTkZvvW0EDlH080uc9GPBMSznuNlk3V7/pcloud"
+wget -P /home/$USER/Downloads/ "https://p-def4.pcloud.com/cBZxtfsXBZ3FFf0sZZZA5dW37Z2ZZ0SJZkZ9G8FVZbZi7ZIFZz5ZXVZa0ZxJZlFZzXZppZB0ZP7ZAJZV7ZM0dakZMop8645UuVHs8nCMDv3sNH8LgVFX/pcloud"
 cd Downloads
 chmod +x pcloud
 ./pcloud
 }
-#mega
-mega()
-{
-wget -O /home/$USER/Downloads/mega.deb "https://mega.nz/linux/MEGAsync/xUbuntu_18.04/amd64/megasync-xUbuntu_18.04_amd64.deb"
-cd Downloads
-apt install ./mega.deb
-}
 
-#creating new directory for my stuff
-create()
-{
-cd ~/Documents
-mkdir pdf
-mkdir Text
-mkdir Spreadsheets
-mkdir Presentation
-
-cd ~/Videos
-mkdir Music Videos
-mkdir Movies
-mkdir Others
-
-cd ~/Pictures
-mkdir Batwoman
-mkdir Wallpapers
-mkdir Others
-}
 
 #repo
-#base
+#basic
 #qemu
 #flatpak
 #flatpak_apps
 #amd1804
 #amd1910
 #pcloud
-#mega
-#create
 
-#apt -y dist-upgrade
-#reboot
+
+apt -y dist-upgrade
+reboot
 
 
 
